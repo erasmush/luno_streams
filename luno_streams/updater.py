@@ -151,6 +151,6 @@ class Updater:
             return sorted(rounded_list, key=lambda a: a[0], reverse=reverse)
 
         return {
-            'bids': consolidate(self.bids.values(), reverse=True),  # highest bid on top
-            'asks': consolidate(self.asks.values()),  # lowest ask on top
+            'bids': self.bids.values()
+            'asks': self.asks.values()
         }
