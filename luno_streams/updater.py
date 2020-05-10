@@ -140,17 +140,7 @@ class Updater:
 
     @property
     def consolidated_order_book(self):
-
-        def consolidate(orders, reverse=False):
-            price_map = defaultdict(Decimal)
-
-            for order in orders:
-                price_map[order[0]] += order[1]
-
-            rounded_list = map(lambda x: [round(x[0], ndigits=8), round(x[1], ndigits=8)], price_map.items())
-            return sorted(rounded_list, key=lambda a: a[0], reverse=reverse)
-
+        
         return {
-            'bids': self.bids.values()
-            'asks': self.asks.values()
+            orders
         }
