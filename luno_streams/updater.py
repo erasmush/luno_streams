@@ -142,6 +142,6 @@ class Updater:
     def consolidated_order_book(self):
         
         return [
-             [self.bids],
-             [self.asks],
+             [self.bids][:100],
+             [self.asks][:100],
         ]
