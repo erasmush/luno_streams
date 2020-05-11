@@ -140,6 +140,8 @@ class Updater:
 
     @property
     def consolidated_order_book(self):
+        self.bids = map(list, self.bids[0].items())
+        self.asks = map(list, self.asks[0].items())
         
         return [
              [self.bids],
