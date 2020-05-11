@@ -141,7 +141,7 @@ class Updater:
     @property
     def consolidated_order_book(self):
         
-        return {
-            'bids': self.bids.values(),
-            'asks': self.asks.values(),
-        }
+        return [
+            'bids': self.bids,
+            'asks': self.asks,
+        ]
