@@ -139,11 +139,8 @@ class Updater:
             existing_order[1] -= Decimal(update['base'])
 
     @property
-    def consolidated_order_book(self):
-        self.bids = map(list, self.bids.items())
-        self.asks = map(list, self.asks.items())
-        
+    def consolidated_order_book(self):       
         return [
-             [self.bids],
-             [self.asks],
+             self.bids,
+             self.asks,
         ]
