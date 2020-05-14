@@ -139,8 +139,15 @@ class Updater:
             existing_order[1] -= Decimal(update['base'])
 
     @property
-    def consolidated_order_book(self):       
+    def consolidated_order_book(self):
+        Luno_BTC_bid_Orderbook_Dic = self.bids
+        Luno_BTC_bid_Orderbook_List = sorted(list(map(list, Luno_BTC_bid_Orderbook_Dic.items())), key=itemgetter([1][0]), reverse=True)
+        Luno_BTC_bid_Orderbook_List_Top_100 = Luno_BTC_bid_Orderbook_List[:100]
+        
+        Luno_BTC_ask_Orderbook_Dic = self.asks
+        Luno_BTC_ask_Orderbook_List = sorted(list(map(list, Luno_BTC_ask_Orderbook_Dic.items())), key=itemgetter([1][0]), reverse=False)
+        Luno_BTC_ask_Orderbook_List_Top_100 = Luno_BTC_ask_Orderbook_List[:100]
         return [
-             self.bids,
-             self.asks,
+             Luno_BTC_bid_Orderbook_List_Top_100,
+             Luno_BTC_ask_Orderbook_List_Top_100,
         ]
