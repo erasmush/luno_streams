@@ -143,11 +143,11 @@ class Updater:
     def consolidated_order_book(self):
         Luno_BTC_bid_Orderbook_Dic = self.bids
         Luno_BTC_bid_Orderbook_List = sorted(list(map(list, Luno_BTC_bid_Orderbook_Dic.items())), key=itemgetter([1][0]), reverse=True)
-        Luno_BTC_bid_Orderbook_List_Top_Bids = [i for i in range(0,len(Luno_BTC_bid_Orderbook_List)) if Luno_BTC_bid_Orderbook_List[i][1][0]==Luno_BTC_bid_Orderbook_List[0][1][0]]
+        Luno_BTC_bid_Orderbook_List_Top_Bids = [Luno_BTC_bid_Orderbook_List[i] for i in range(0,len(Luno_BTC_bid_Orderbook_List)) if Luno_BTC_bid_Orderbook_List[i][1][0]==Luno_BTC_bid_Orderbook_List[0][1][0]]
                                                     
         Luno_BTC_ask_Orderbook_Dic = self.asks
         Luno_BTC_ask_Orderbook_List = sorted(list(map(list, Luno_BTC_ask_Orderbook_Dic.items())), key=itemgetter([1][0]), reverse=False)
-        Luno_BTC_ask_Orderbook_List_Top_Asks = [i for i in range(0,len(Luno_BTC_ask_Orderbook_List)) if Luno_BTC_ask_Orderbook_List[i][1][0]==Luno_BTC_ask_Orderbook_List[0][1][0]]
+        Luno_BTC_ask_Orderbook_List_Top_Asks = [Luno_BTC_ask_Orderbook_List[i] for i in range(0,len(Luno_BTC_ask_Orderbook_List)) if Luno_BTC_ask_Orderbook_List[i][1][0]==Luno_BTC_ask_Orderbook_List[0][1][0]]
         return [
              Luno_BTC_bid_Orderbook_List_Top_Bids,
              Luno_BTC_ask_Orderbook_List_Top_Asks,
