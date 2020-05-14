@@ -4,6 +4,7 @@ import logging
 import time
 from collections import defaultdict
 from decimal import Decimal
+from operator import itemgetter
 
 import websockets
 
