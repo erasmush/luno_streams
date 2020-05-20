@@ -153,7 +153,7 @@ class Updater:
         #     Luno_BTC_ask_Orderbook_List_Top_Asks,
         #]
         return [
-             self.bids,
-             self.asks,
+             self.bids[:10],
+             self.asks[:10],
         ]
         
