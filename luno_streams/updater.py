@@ -154,15 +154,15 @@ class Updater:
         #]
         
         Luno_BTC_bid_Orderbook_List = [(k,v) for k,v in dict.items(self.bids)] 
-        Highest_Bid_Price = max(Luno_BTC_bid_Orderbook_List, key=lambda x: x[1][0])
-        Luno_BTC_bid_Orderbook_List_Top_Bids = [Luno_BTC_bid_Orderbook_List[i] for i in range(0,len(Luno_BTC_bid_Orderbook_List)) if Luno_BTC_bid_Orderbook_List[i][1][0]==Highest_Bid_Price]
+        Highest_Bid_Order = max(Luno_BTC_bid_Orderbook_List, key=lambda x: x[1][0])
+        Luno_BTC_bid_Orderbook_List_Top_Bids = [Luno_BTC_bid_Orderbook_List[i] for i in range(0,len(Luno_BTC_bid_Orderbook_List)) if Luno_BTC_bid_Orderbook_List[i][1][0]==Highest_Bid_Order[1][0]]
         
         Luno_BTC_ask_Orderbook_List = [(k,v) for k,v in dict.items(self.asks)]
-        Lowest_Ask_Price = min(Luno_BTC_ask_Orderbook_List, key=lambda x: x[1][0])
-        Luno_BTC_ask_Orderbook_List_Top_Asks = [Luno_BTC_ask_Orderbook_List[i] for i in range(0,len(Luno_BTC_ask_Orderbook_List)) if Luno_BTC_ask_Orderbook_List[i][1][0]==Lowest_Ask_Price]
+        Lowest_Ask_Order = min(Luno_BTC_ask_Orderbook_List, key=lambda x: x[1][0])
+        Luno_BTC_ask_Orderbook_List_Top_Asks = [Luno_BTC_ask_Orderbook_List[i] for i in range(0,len(Luno_BTC_ask_Orderbook_List)) if Luno_BTC_ask_Orderbook_List[i][1][0]==Lowest_Ask_Order[1][0]]
         
         return [
-             Highest_Bid_Price,
-             Lowest_Ask_Price,
+             Luno_BTC_bid_Orderbook_List_Top_Bids,
+             Luno_BTC_ask_Orderbook_List_Top_Asks,
         ]
         
