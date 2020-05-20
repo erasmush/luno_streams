@@ -162,7 +162,7 @@ class Updater:
         Luno_BTC_ask_Orderbook_List_Top_Asks = [Luno_BTC_ask_Orderbook_List[i] for i in range(0,len(Luno_BTC_ask_Orderbook_List)) if Luno_BTC_ask_Orderbook_List[i][1][0]==Lowest_Ask_Price]
         
         return [
-             Luno_BTC_bid_Orderbook_List_Top_Bids,
-             Luno_BTC_ask_Orderbook_List_Top_Asks,
+             Highest_Bid_Price,
+             Lowest_Ask_Price,
         ]
         
