@@ -155,7 +155,7 @@ class Updater:
         Luno_BTC_bid_Orderbook_Dic = self.bids
         Luno_BTC_bid_Orderbook_List = dict.items(self.bids)
         return [
-             Luno_BTC_bid_Orderbook_List,
+             Luno_BTC_bid_Orderbook_List[:10],
              1,
         ]
         
