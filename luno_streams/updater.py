@@ -161,6 +161,6 @@ class Updater:
         
         return [
              Luno_BTC_bid_Orderbook_List_Top_Bids,
-             Luno_BTC_ask_Orderbook_List_Top_Asks,
+             Luno_BTC_ask_Orderbook_List,
         ]
         
