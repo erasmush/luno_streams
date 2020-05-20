@@ -142,7 +142,7 @@ class Updater:
     @property
     def consolidated_order_book(self):
         
-        Luno_BTC_bid_Orderbook_List = [(k,v) for k,v in dict.items(self.bids) if v[0] ==  max(v[0])]
+        Luno_BTC_bid_Orderbook_List = [(k,v) for k,v in dict.items(self.bids) if v[0] ==  max(self.bids, key=lambda x: x[1][0])]
         
         #Luno_BTC_bid_Orderbook_List = [(k,v) for k,v in dict.items(self.bids)] 
         #Highest_Bid_Order = max(Luno_BTC_bid_Orderbook_List, key=lambda x: x[1][0])
